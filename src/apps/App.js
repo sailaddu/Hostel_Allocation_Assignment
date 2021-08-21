@@ -4,8 +4,8 @@ import firebase from "firebase"
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 
 firebase.initializeApp({
-  apiKey: "AIzaSyCdQY_SjuaTl_VPDrUAwy9iUFBo9MlweeU",
-  authDomain: "hostel-allocation-assign-a50e6.firebaseapp.com"
+  apiKey:"AIzaSyAaeUMJn71A64l6y63nBb1MGrX2-J8jW70",
+  authDomain: "hostel-allocation-d7c92.firebaseapp.com"
 })
 
 class App extends Component{
@@ -23,10 +23,12 @@ class App extends Component{
   }
 
   componentDidMount=()=>{
+    
     firebase.auth().onAuthStateChanged(user => {
-      this.setState({ isSignedIn : !!user })
-    })
+      this.setState({ isSignedIn : !!user })})
+      firebase.auth().signOut();
   }
+  
 
   render(){
   return(
